@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="systemServiceImplProvider"/>
+
+    <dubbo:registry address="zookeeper://169.254.47.83:2181"/>
+
+    <dubbo:protocol host="169.254.47.83" name="dubbo" port="20881"/>
+
+
+    <bean class="com.kaishengit.tms.service.impl.AccountServiceImpl" id="accountService"/>
+    <bean class="com.kaishengit.tms.service.impl.ScenicServiceImpl" id="scenicService"/>
+    <bean class="com.kaishengit.tms.service.impl.TicketStoreServiceImpl" id="ticketStoreService"/>
+    <bean class="com.kaishengit.tms.service.impl.StorageServiceImpl" id="storageService"/>
+    <bean class="com.kaishengit.tms.service.impl.TicketServiceImpl" id="ticketService"/>
+    <bean class="com.kaishengit.tms.service.impl.CheckTicketServiceImpl" id="checkTicketService"/>
+    <bean class="com.kaishengit.tms.service.impl.TicketOrderServiceImpl" id="ticketOrderService"/>
+    <bean class="com.kaishengit.tms.service.impl.TicketConsumerServiceImpl" id="ticketConsumerService"/>
+
+
+    <dubbo:service interface="com.kaishengit.tms.service.AccountService" ref="accountService"/>
+    <dubbo:service interface="com.kaishengit.tms.service.ScenicService" ref="scenicService"/>
+    <dubbo:service interface="com.kaishengit.tms.service.TicketStoreService" ref="ticketStoreService"/>
+    <dubbo:service interface="com.kaishengit.tms.service.StorageService" ref="storageService"/>
+    <dubbo:service interface="com.kaishengit.tms.service.TicketService" ref="ticketService"/>
+    <dubbo:service interface="com.kaishengit.tms.service.CheckTicketService" ref="checkTicketService"/>
+    <dubbo:service interface="com.kaishengit.tms.service.TicketOrderService" ref="ticketOrderService"/>
+    <dubbo:service interface="com.kaishengit.tms.service.TicketConsumerService" ref="ticketConsumerService"/>
+
+
+</beans>

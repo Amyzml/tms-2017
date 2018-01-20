@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.kaishengit</groupId>
+    <artifactId>tms-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>../tms-scenic</module>
+        <module>../tms-finance</module>
+        <module>../tms-storage</module>
+        <module>../tms-system</module>
+        <module>../tms-common</module>
+        <module>../tms-ticket-store</module>
+    </modules>
+    <packaging>pom</packaging>
+
+
+<!--    <repositories>
+        &lt;!&ndash;配置从私服获取最新的snapshot版本的jar依赖&ndash;&gt;
+        <repository>
+            <id>kaishengit-snapshot</id>
+            <url>http://192.168.1.162:8081/repository/kaishengit-snapshot/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>kaishengit-release</id>
+            <url>http://192.168.1.162:8081/repository/kaishengit-release/</url>
+        </repository>
+    </repositories>-->
+
+    <distributionManagement>
+        <!--项目部署地址-->
+        <snapshotRepository>
+            <id>kaishengit-snapshot</id>
+            <url>http://192.168.1.162:8081/repository/kaishengit-snapshot/</url>
+        </snapshotRepository>
+        <repository>
+            <url>http://192.168.1.162:8081/repository/kaishengit-release/</url>
+            <id>kaishengit-release</id>
+        </repository>
+    </distributionManagement>
+
+    
+</project>
